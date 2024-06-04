@@ -10,7 +10,6 @@ type GetTableData<A extends AntDesign.TableApiFn> = AntDesign.GetTableData<A>;
 type TableColumn<T> = AntDesign.TableColumn<T>;
 
 export function useTable<A extends AntDesign.TableApiFn>(config: AntDesign.AntDesignTableConfig<A>) {
-  const scope = effectScope();
   const appStore = useAppStore();
 
   const { apiFn, apiParams, immediate } = config;
@@ -120,6 +119,7 @@ export function useTable<A extends AntDesign.TableApiFn>(config: AntDesign.AntDe
   function updatePagination(update: Partial<TablePaginationConfig>) {
     Object.assign(pagination, update);
   }
+  const scope = effectScope();
 
   scope.run(() => {
     watch(
