@@ -31,7 +31,7 @@ function handleClickMenu(key: RouteKey) {
   <!-- define component start: BreadcrumbContent -->
   <DefineBreadcrumbContent v-slot="{ breadcrumb }">
     <div class="i-flex-y-center align-middle">
-      <component :is="breadcrumb.icon" v-if="themeStore.header.breadcrumb.showIcon" class="mr-4px text-icon" />
+      <component :is="breadcrumb.icon" v-if="themeStore.header.breadcrumb.showIcon" class="mr-6px scale-80 text-icon" />
       {{ breadcrumb.label }}
     </div>
   </DefineBreadcrumbContent>
@@ -40,7 +40,6 @@ function handleClickMenu(key: RouteKey) {
   <ABreadcrumb v-if="themeStore.header.breadcrumb.visible" v-bind="attrs">
     <ABreadcrumbItem v-for="item in routeStore.breadcrumbs" :key="item.key">
       <BreadcrumbContent :breadcrumb="item" />
-
       <template v-if="item.children?.length" #overlay>
         <AMenu>
           <AMenuItem v-for="option in item.children" :key="option.key" @click="handleClickMenu(option.routeKey)">

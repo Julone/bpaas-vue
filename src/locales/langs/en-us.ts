@@ -1,6 +1,6 @@
 const local: App.I18n.Schema = {
   system: {
-    title: 'SoybeanAdmin'
+    title: 'Bpaas 作业平台'
   },
   common: {
     action: 'Action',
