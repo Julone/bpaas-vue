@@ -6,7 +6,7 @@ export async function release(execute = 'pnpm sa changelog', push = true) {
     execute,
     all: true,
     tag: true,
-    commit: 'chore(projects): release v%s',
+    commit: 'release: release v%s',
     push
   });
 }
